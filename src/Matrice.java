@@ -15,6 +15,11 @@ public class Matrice {
 /*----------------------------------------------*/
 
 /*-----------------Constructeurs----------------*/
+	public Matrice(int taille) {
+		this.taille = taille;
+		this.matrice = new Case[taille][taille];
+	}
+
 	public Matrice(int[][] matrice) {
 		taille = matrice.length;
 		this.matrice = new Case[taille][taille];
@@ -63,6 +68,17 @@ public class Matrice {
 		}
 
 		return(ret);
+	}
+
+	public Matrice copie() {
+		Matrice copie = new Matrice(this.taille);
+		for(int i = 0; i < taille; i++) {
+			for(int j = 0; j < taille; j++) {
+				copie.setValue(i, j, this.getValue(i, j));
+			}
+		}
+
+		return(copie);
 	}
 /*----------------------------------------------*/
 
