@@ -8,5 +8,12 @@
 public class Main {
     public static void main (String[] args){
         System.out.println("Hello Worlds");
+
+		 int[][] tab = {{17, 15, 9, 5, 12}, {16, 16, 10, 5, 10}, {12, 15, 14, 11, 5}, {4, 8, 14, 7, 13}, {13, 9, 8, 12, 17}};
+		 Matrice a = new Matrice(tab);
+		 System.out.println(a.toString());
+		 Little l = new Little(a);
+		 l.run();
+		 System.out.println(l.getMatrice());
     }
 }

@@ -25,6 +25,11 @@ public class Matrice {
 		this.matrice = new Case[taille][taille];
 		for(int i = 0; i < taille; i++) {
 			for(int j = 0; j < taille; j++) {
+				if(i == j) {
+					this.matrice[i][j].setValeur(-1);
+				}
+
+
 				this.matrice[i][j] = new Case(matrice[i][j]);
 				this.matrice[i][j].marque = false;
 			}
@@ -70,7 +75,7 @@ public class Matrice {
 		return(ret);
 	}
 
-	public Matrice copie() {
+	public Matrice copy() {
 		Matrice copie = new Matrice(this.taille);
 		for(int i = 0; i < taille; i++) {
 			for(int j = 0; j < taille; j++) {
