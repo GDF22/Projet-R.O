@@ -15,10 +15,14 @@ public class Case {
 /*----------------------------------------------*/
 
 	/*-----------------Constructeurs----------------*/
-	public Case(int valeur) {
-		this.valeur = valeur;
-		marque = false;
-	}
+    public Case(int valeur) {
+        this.valeur = valeur;
+        marque = false;
+    }
+    public Case() {
+        this.valeur = 0;
+        marque = false;
+    }
 /*----------------------------------------------*/
 
 	/*--------------------Getters-------------------*/

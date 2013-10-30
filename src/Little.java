@@ -10,26 +10,41 @@
 
 public class Little {
 /*-------------------Variables------------------*/
-	private Matrice matrice;
 /*----------------------------------------------*/
 
 /*-----------------Constructeurs----------------*/
-	public Little(Matrice matrice) {
-		this.matrice = matrice;
+	public Little() {
 	}
 /*----------------------------------------------*/
 
 /*-------------------Methodes-------------------*/
-	public void run() {
-        matrice.reductionLigne();
-        matrice.reductionColonne();
-		this.couverture0();
-	}
+	public int run(Matrice mat , int cost ) {
+        int eviction;
+        Coord coord;
+        Matrice mat2;
+
+        if ( mat.getTaille() == 2 ){
+            return cost + mat.getValue(0,1)+ mat.getValue(1,0);
+        }
+        else{
+            mat.reductionLigne();
+            mat.reductionColonne();
+            coord = mat.EvictionCost().getMaxCoord();
+            eviction = mat.EvictionCost().getMax();
+            mat2 = mat.copy();
+            mat.suppRowNColumn(coord);
+            mat2.suppRowNColumn(coord.inv());
+
+            System.out.println("cost : " + cost);
+            System.out.println("eviction : " + eviction);
+        return( Math.min( run( mat , cost) , run( mat2 , cost+eviction) ) );
+        }
+    }
 
 
 
 
-	public void couverture0() {
+	/*public void couverture0() {
 		boolean[] ligne = new boolean[matrice.getTaille()];
 		boolean[] colonne = new boolean[matrice.getTaille()];
 		for(int i = 0; i < matrice.getTaille(); i++) {
@@ -43,7 +58,7 @@ public class Little {
 
 	public Matrice getMatrice() {
 		return(matrice);
-	}
+	}*/
 /*----------------------------------------------*/
 
 

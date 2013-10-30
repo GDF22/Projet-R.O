@@ -18,6 +18,12 @@ public class Matrice {
 	public Matrice(int taille) {
 		this.taille = taille;
 		this.matrice = new Case[taille][taille];
+        for(int i = 0; i < taille; i++) {
+            for(int j = 0; j < taille; j++) {
+                this.matrice[i][j] = new Case(0);
+                this.matrice[i][j].marque = false;
+            }
+        }
 	}
 
 	public Matrice(int[][] matrice) {
@@ -33,9 +39,13 @@ public class Matrice {
 /*----------------------------------------------*/
 
 	/*--------------------Getters-------------------*/
-	public int getValue(int i, int j) {
-		return(matrice[i][j].valeur);
-	}
+    public int getValue(int i, int j) {
+        return(matrice[i][j].valeur);
+    }
+
+    public int getValue(Coord coord) {
+        return(matrice[coord.x][coord.y].valeur);
+    }
 
 	public boolean getMarque(int i, int j) {
 		return(matrice[i][j].marque);
@@ -70,7 +80,8 @@ public class Matrice {
 		return(ret);
 	}
 
-	public void reductionLigne() {
+	public int reductionLigne() {
+        int sommeRegret = 0;
 		int min;
 		for(int i = 0; i < this.getTaille(); i++) {
 			min = this.getValue(i, 0);
@@ -82,15 +93,18 @@ public class Matrice {
 					min = (this.getValue(i, j) < min)? this.getValue(i, j): min;
 				}
 			}
+            sommeRegret += min;
 			for(int j = 0; j < this.getTaille(); j++) {
 				if(this.getValue(i, j) != -1) {
 					this.setValue(i, j, this.getValue(i, j) - min);
 				}
 			}
 		}
+        return(sommeRegret);
 	}
 
-	public void reductionColonne() {
+	public int reductionColonne() {
+        int sommeRegret = 0;
 		int min;
 		for(int j = 0; j < this.getTaille(); j++) {
 			min = this.getValue(0, j);
@@ -102,12 +116,14 @@ public class Matrice {
 					min = (this.getValue(i, j) < min)? this.getValue(i, j): min;
 				}
 			}
+            sommeRegret += min;
 			for(int i = 0; i < this.getTaille(); i++) {
 				if(this.getValue(i, j) != -1) {
 					this.setValue(i, j, this.getValue(i, j) - min);
 				}
 			}
 		}
+        return(sommeRegret);
 	}
 
 	public Matrice copy() {
@@ -122,24 +138,46 @@ public class Matrice {
 		return(copie);
 	}
 
-	public Matrice EvictionCost(){
-		Matrice res = this.copy();
-		int[] minByRow = new int[res.taille];
-		int[] minByColumn = new int[res.taille];
+    public int getMax(){
+        int res = 0;
+        for (int i = 0 ; i < taille; i++){
+            for (int j = 0 ; j < taille; j++){
+                res = ( res < getValue(i,j))? getValue(i,j) : res;
+            }
+        }
+        return res;
+    }
 
-		for (int i = 0 ; i < res.taille; i++){
-			for (int j = 0 ; j < res.taille; j++){
-				minByRow[i] = (this.getValue(i,j)<minByRow[i])? this.getValue(i,j) : minByRow[i];
-				minByColumn[j] = (this.getValue(i,j)<minByColumn[j])? this.getValue(i,j) : minByColumn[j];
-			}
-		}
-		for (int i = 0 ; i < res.taille; i++){
-			for (int j = 0 ; j < res.taille; j++){
-				res.setValue(i,j,minByRow[i]+minByColumn[j]);
+	public Matrice EvictionCost(){
+        Matrice res = new Matrice(taille);
+        int max, minRow,minColumn;
+
+        max = getMax();
+
+		for (int i = 0 ; i < taille; i++){
+			for (int j = 0 ; j < taille; j++){
+                minRow = max;
+                minColumn = max;
+
+                if(this.getValue(i,j) == 0){
+                    for (int x = 0 ; x < taille ; x++){
+                        if(x != i && getValue(x,j) != -1) minRow = (getValue(x,j) < minRow )?getValue(x,j) : minRow;
+                        if(x != j && getValue(i,x) != -1) minColumn = (getValue(i,x) < minColumn )?getValue(i,x) : minColumn;
+                    res.setValue(i,j,minRow+minColumn);
+                    }
+                }
+
+                else {
+                    res.setValue(i,j,0);
+                }
 			}
 		}
 		return res;
 	}
+
+    public void suppRowNColumn(Coord coord){
+        this.suppRowNColumn(coord.x , coord.y);
+    }
 
 	public void suppRowNColumn(int row , int column){
 		this.taille --;
@@ -156,6 +194,21 @@ public class Matrice {
 		}
 		this.matrice = newmat;
 	}
+
+    public Coord getMaxCoord(){
+        int max = 0;
+        Coord res = new Coord();
+         for(int i = 0 ; i < taille ; i++){
+             for(int j = 0 ; j < taille ; j++){
+                if(getValue(i,j)> max){
+                    max = getValue(i,j) ;
+                    res.x = i;
+                    res.y = j;
+                }
+             }
+         }
+        return res;
+    }
 /*----------------------------------------------*/
 
 
