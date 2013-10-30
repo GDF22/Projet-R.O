@@ -9,12 +9,12 @@
  */
 
 public class Matrice {
-/*-------------------Variables------------------*/
+	/*-------------------Variables------------------*/
 	private Case[][] matrice;
 	private int taille;
 /*----------------------------------------------*/
 
-/*-----------------Constructeurs----------------*/
+	/*-----------------Constructeurs----------------*/
 	public Matrice(int taille) {
 		this.taille = taille;
 		this.matrice = new Case[taille][taille];
@@ -32,7 +32,7 @@ public class Matrice {
 	}
 /*----------------------------------------------*/
 
-/*--------------------Getters-------------------*/
+	/*--------------------Getters-------------------*/
 	public int getValue(int i, int j) {
 		return(matrice[i][j].valeur);
 	}
@@ -42,11 +42,11 @@ public class Matrice {
 	}
 
 	public int getTaille() {
-	    return(this.taille);
+		return(this.taille);
 	}
 /*----------------------------------------------*/
 
-/*--------------------Setters-------------------*/
+	/*--------------------Setters-------------------*/
 	public void setValue(int i, int j, int value) {
 		matrice[i][j].valeur = value;
 	}
@@ -56,7 +56,7 @@ public class Matrice {
 	}
 /*----------------------------------------------*/
 
-/*-------------------Methodes-------------------*/
+	/*-------------------Methodes-------------------*/
 	public String toString() {
 		String ret = "";
 
@@ -70,37 +70,51 @@ public class Matrice {
 		return(ret);
 	}
 
-    public void reductionLigne() {
-        int min;
-        for(int i = 0; i < this.getTaille(); i++) {
-            min = this.getValue(i, 0);
-            for(int j = 0; j < this.getTaille(); j++) {
-                min = (this.getValue(i, j) < min)? this.getValue(i, j): min;
-            }
-            for(int j = 0; j < this.getTaille(); j++) {
-                this.setValue(i, j, this.getValue(i, j) - min);
-            }
-        }
-    }
+	public void reductionLigne() {
+		int min;
+		for(int i = 0; i < this.getTaille(); i++) {
+			min = this.getValue(i, 0);
+			if(i == 0) {
+				min = this.getValue(i, 1);
+			}
+			for(int j = 0; j < this.getTaille(); j++) {
+				if(this.getValue(i, j) != -1) {
+					min = (this.getValue(i, j) < min)? this.getValue(i, j): min;
+				}
+			}
+			for(int j = 0; j < this.getTaille(); j++) {
+				if(this.getValue(i, j) != -1) {
+					this.setValue(i, j, this.getValue(i, j) - min);
+				}
+			}
+		}
+	}
 
-    public void reductionColonne() {
-        int min;
-        for(int j = 0; j < this.getTaille(); j++) {
-            min = this.getValue(0, j);
-            for(int i = 0; i < this.getTaille(); i++) {
-                min = (this.getValue(i, j) < min)? this.getValue(i, j): min;
-            }
-            for(int i = 0; i < this.getTaille(); i++) {
-                this.setValue(i, j, this.getValue(i, j) - min);
-            }
-        }
-    }
+	public void reductionColonne() {
+		int min;
+		for(int j = 0; j < this.getTaille(); j++) {
+			min = this.getValue(0, j);
+			if(j == 0) {
+				min = this.getValue(1, j);
+			}
+			for(int i = 0; i < this.getTaille(); i++) {
+				if(this.getValue(i, j) != -1) {
+					min = (this.getValue(i, j) < min)? this.getValue(i, j): min;
+				}
+			}
+			for(int i = 0; i < this.getTaille(); i++) {
+				if(this.getValue(i, j) != -1) {
+					this.setValue(i, j, this.getValue(i, j) - min);
+				}
+			}
+		}
+	}
 
 	public Matrice copy() {
 		Matrice copie = new Matrice(this.taille);
 		for(int i = 0; i < taille; i++) {
 			for(int j = 0; j < taille; j++) {
-                copie.matrice[i][j] = new Case(this.getValue(i, j));
+				copie.matrice[i][j] = new Case(this.getValue(i, j));
 				copie.setValue(i, j, this.getValue(i, j));
 			}
 		}
@@ -108,40 +122,40 @@ public class Matrice {
 		return(copie);
 	}
 
-    public Matrice EvictionCost(){
-        Matrice res = this.copy();
-        int[] minByRow = new int[res.taille];
-        int[] minByColumn = new int[res.taille];
+	public Matrice EvictionCost(){
+		Matrice res = this.copy();
+		int[] minByRow = new int[res.taille];
+		int[] minByColumn = new int[res.taille];
 
-        for (int i = 0 ; i < res.taille; i++){
-            for (int j = 0 ; j < res.taille; j++){
-                minByRow[i] = (this.getValue(i,j)<minByRow[i])? this.getValue(i,j) : minByRow[i];
-                minByColumn[j] = (this.getValue(i,j)<minByColumn[j])? this.getValue(i,j) : minByColumn[j];
-            }
-        }
-        for (int i = 0 ; i < res.taille; i++){
-            for (int j = 0 ; j < res.taille; j++){
-                res.setValue(i,j,minByRow[i]+minByColumn[j]);
-            }
-        }
-       return res;
-    }
+		for (int i = 0 ; i < res.taille; i++){
+			for (int j = 0 ; j < res.taille; j++){
+				minByRow[i] = (this.getValue(i,j)<minByRow[i])? this.getValue(i,j) : minByRow[i];
+				minByColumn[j] = (this.getValue(i,j)<minByColumn[j])? this.getValue(i,j) : minByColumn[j];
+			}
+		}
+		for (int i = 0 ; i < res.taille; i++){
+			for (int j = 0 ; j < res.taille; j++){
+				res.setValue(i,j,minByRow[i]+minByColumn[j]);
+			}
+		}
+		return res;
+	}
 
-    public void suppRowNColumn(int row , int column){
-        this.taille --;
-        int x,y;
-        Case[][] newmat = new Case[this.taille][this.taille];
-        x = 0;
-        for(int i = 0 ; i < this.taille ; i++ ){
-            y = 0;
-            if(i== row) x = 1;
-            for(int j = 0; j < this.taille ; j++ ){
-                if(j == column) y = 1;
-                newmat[i][j] = new Case(this.getValue(i+x,j+y));
-            }
-        }
-        this.matrice = newmat;
-    }
+	public void suppRowNColumn(int row , int column){
+		this.taille --;
+		int x,y;
+		Case[][] newmat = new Case[this.taille][this.taille];
+		x = 0;
+		for(int i = 0 ; i < this.taille ; i++ ){
+			y = 0;
+			if(i== row) x = 1;
+			for(int j = 0; j < this.taille ; j++ ){
+				if(j == column) y = 1;
+				newmat[i][j] = new Case(this.getValue(i+x,j+y));
+			}
+		}
+		this.matrice = newmat;
+	}
 /*----------------------------------------------*/
 
 
