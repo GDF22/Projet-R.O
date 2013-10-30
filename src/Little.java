@@ -21,36 +21,12 @@ public class Little {
 
 /*-------------------Methodes-------------------*/
 	public void run() {
-		this.reductionLigne();
-		this.reductionColonne();
+        matrice.reductionLigne();
+        matrice.reductionColonne();
 		this.couverture0();
 	}
 
-	public void reductionLigne() {
-		int min;
-		for(int i = 0; i < matrice.getTaille(); i++) {
-			min = matrice.getValue(i, 0);
-			for(int j = 0; j < matrice.getTaille(); j++) {
-				min = (matrice.getValue(i, j) < min)? matrice.getValue(i, j): min;
-			}
-			for(int j = 0; j < matrice.getTaille(); j++) {
-				matrice.setValue(i, j, matrice.getValue(i, j) - min);
-			}
-		}
-	}
 
-	public void reductionColonne() {
-		int min;
-		for(int j = 0; j < matrice.getTaille(); j++) {
-			min = matrice.getValue(0, j);
-			for(int i = 0; i < matrice.getTaille(); i++) {
-				min = (matrice.getValue(i, j) < min)? matrice.getValue(i, j): min;
-			}
-			for(int i = 0; i < matrice.getTaille(); i++) {
-				matrice.setValue(i, j, matrice.getValue(i, j) - min);
-			}
-		}
-	}
 
 
 	public void couverture0() {
