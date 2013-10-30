@@ -17,5 +17,10 @@ public class Main {
 		 Little l = new Little(a);
 		 l.run();
 		 System.out.println(l.getMatrice());
+        a.EvictionCost();
+        System.out.println(a);
+
+        a.suppRowNColumn(2,2);
+        System.out.println(a);
     }
 }

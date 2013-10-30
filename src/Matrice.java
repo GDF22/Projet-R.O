@@ -100,7 +100,8 @@ public class Matrice {
 		Matrice copie = new Matrice(this.taille);
 		for(int i = 0; i < taille; i++) {
 			for(int j = 0; j < taille; j++) {
-				copie.setValue(i, j, this.getValue(i, j));
+                copie.matrice[i][j] = new Case(this.getValue(i, j));
+                copie.setValue(i, j, this.getValue(i, j));
 			}
 		}
 
@@ -128,14 +129,18 @@ public class Matrice {
 
     public void suppRowNColumn(int row , int column){
         this.taille --;
+        int x,y;
         Case[][] newmat = new Case[this.taille][this.taille];
-        for(int i = 0 ; i < this.taille+1 ; i++ ){
-            for(int j = 0; j < this.taille+1 ; j++ ){
-                if(i != row && j != column){
-                    newmat[i][j]
-                }
+        x = 0;
+        for(int i = 0 ; i < this.taille ; i++ ){
+            y = 0;
+            if(i == row) x=1;
+            for(int j = 0; j < this.taille ; j++ ){
+                if(j == column) y=1;
+                newmat[i][j] = new Case(this.getValue(i + x, j + y));
             }
         }
+        this.matrice = newmat;
     }
 /*----------------------------------------------*/
 
