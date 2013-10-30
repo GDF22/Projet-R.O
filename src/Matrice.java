@@ -70,36 +70,51 @@ public class Matrice {
 		return(ret);
 	}
 
-    public void reductionLigne() {
-        int min;
-        for(int i = 0; i < this.getTaille(); i++) {
-            min = this.getValue(i, 0);
-            for(int j = 0; j < this.getTaille(); j++) {
-                min = (this.getValue(i, j) < min)? this.getValue(i, j): min;
-            }
-            for(int j = 0; j < this.getTaille(); j++) {
-                this.setValue(i, j, this.getValue(i, j) - min);
-            }
-        }
-    }
+	public void reductionLigne() {
+		int min;
+		for(int i = 0; i < this.getTaille(); i++) {
+			min = this.getValue(i, 0);
+			if(i == 0) {
+				min = this.getValue(i, 1);
+			}
+			for(int j = 0; j < this.getTaille(); j++) {
+				if(this.getValue(i, j) != -1) {
+					min = (this.getValue(i, j) < min)? this.getValue(i, j): min;
+				}
+			}
+			for(int j = 0; j < this.getTaille(); j++) {
+				if(this.getValue(i, j) != -1) {
+					this.setValue(i, j, this.getValue(i, j) - min);
+				}
+			}
+		}
+	}
 
-    public void reductionColonne() {
-        int min;
-        for(int j = 0; j < this.getTaille(); j++) {
-            min = this.getValue(0, j);
-            for(int i = 0; i < this.getTaille(); i++) {
-                min = (this.getValue(i, j) < min)? this.getValue(i, j): min;
-            }
-            for(int i = 0; i < this.getTaille(); i++) {
-                this.setValue(i, j, this.getValue(i, j) - min);
-            }
-        }
-    }
+	public void reductionColonne() {
+		int min;
+		for(int j = 0; j < this.getTaille(); j++) {
+			min = this.getValue(0, j);
+			if(j == 0) {
+				min = this.getValue(1, j);
+			}
+			for(int i = 0; i < this.getTaille(); i++) {
+				if(this.getValue(i, j) != -1) {
+					min = (this.getValue(i, j) < min)? this.getValue(i, j): min;
+				}
+			}
+			for(int i = 0; i < this.getTaille(); i++) {
+				if(this.getValue(i, j) != -1) {
+					this.setValue(i, j, this.getValue(i, j) - min);
+				}
+			}
+		}
+	}
 
 	public Matrice copy() {
 		Matrice copie = new Matrice(this.taille);
 		for(int i = 0; i < taille; i++) {
 			for(int j = 0; j < taille; j++) {
+				copie.matrice[i][j] = new Case(this.getValue(i, j));
 				copie.setValue(i, j, this.getValue(i, j));
 			}
 		}
