@@ -5,6 +5,7 @@
  * Time: 17:52
  * To change this template use File | Settings | File Templates.
  */
+
 public class Coord {
     public int x;
     public int y;
