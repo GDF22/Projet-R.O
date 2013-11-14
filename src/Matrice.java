@@ -8,8 +8,16 @@
  *
  */
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 public class Matrice {
-	/*-------------------Variables------------------*/
+
+    public static final int INFINITE = 9999999;
+
+    /*-------------------Variables------------------*/
 	private Case[][] matrice;
 	private int taille;
 /*----------------------------------------------*/
@@ -36,6 +44,43 @@ public class Matrice {
 			}
 		}
 	}
+
+    public Matrice(String fichier, int taille) {
+        this(taille);
+
+        try{
+            InputStream ips=new FileInputStream(fichier);
+            InputStreamReader ipsr=new InputStreamReader(ips);
+            BufferedReader br=new BufferedReader(ipsr);
+            String ligne;
+
+            int i = 0;
+            int j = 0;
+
+            while ((ligne=br.readLine())!=null){
+                char[] carac = ligne.toCharArray();
+                String nb = "";
+                int c = 0;
+                while(c < ligne.length()) {
+                    if(carac[c] != ',') {
+                        nb += carac[c];
+                    } else {
+                        this.setValue(i, j, Integer.decode(nb));
+                        nb = "";
+                        j++;
+                    }
+                    c++;
+                }
+                this.setValue(i, j, Integer.decode(nb));
+                j = 0;
+                i++;
+            }
+            br.close();
+        }
+        catch (Exception e){
+            System.out.println(e.toString());
+        }
+    }
 /*----------------------------------------------*/
 
 	/*--------------------Getters-------------------*/

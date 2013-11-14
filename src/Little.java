@@ -8,11 +8,14 @@
  *
  */
 
+
 public class Little {
 /*-------------------Variables------------------*/
 /*----------------------------------------------*/
 
 /*-----------------Constructeurs----------------*/
+    public static final int INFINITE = 9999999;
+
 	public Little() {
 	}
 /*----------------------------------------------*/
@@ -35,8 +38,8 @@ public class Little {
             mat.suppRowNColumn(coord);
             mat2.suppRowNColumn(coord.inv());
 
-            System.out.println("cost : " + cost);
-            System.out.println("eviction : " + eviction);
+            //System.out.println("cost : " + cost);
+            //System.out.println("eviction : " + eviction);
         return( Math.min( run( mat , cost) , run( mat2 , cost+eviction) ) );
         }
     }

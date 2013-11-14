@@ -42,5 +42,19 @@ public class OperationMatrice {
 		}
 	}
 
+    public static void transpose(int[][] tab) {
+        int[][] tabcopie = new int[tab.length][tab[0].length];
+        for(int i = 0; i < tab.length; i++) {
+            for(int j = 0; j < tab.length; j++) {
+                tabcopie[i][j] = tab[i][j];
+            }
+        }
+
+        for(int i = 0; i < tab.length; i++) {
+            for(int j = 0; j < tab.length; j++) {
+                tab[i][j] = tabcopie[j][i];
+            }
+        }
+    }
 
 }
