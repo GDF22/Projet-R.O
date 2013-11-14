@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef32b7df-f401-4887-ad69-0fa9898da489" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Case.java" afterPath="$PROJECT_DIR$/src/Case.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Coord.java" afterPath="$PROJECT_DIR$/src/Coord.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BalasHammer.java" afterPath="$PROJECT_DIR$/src/BalasHammer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CoinNO.java" afterPath="$PROJECT_DIR$/src/CoinNO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OperationMatrice.java" afterPath="$PROJECT_DIR$/src/OperationMatrice.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Projet-R.O..iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/fragment.java" changelist="ef32b7df-f401-4887-ad69-0fa9898da489" time="1383146758099" ignored="false" />
-    <file path="/Dummy.txt" changelist="ef32b7df-f401-4887-ad69-0fa9898da489" time="1384439273305" ignored="false" />
+    <file path="/Dummy.txt" changelist="ef32b7df-f401-4887-ad69-0fa9898da489" time="1384439981205" ignored="false" />
     <file path="$PROJECT_DIR$/../Opti/src/FordFulkerson.java" changelist="ef32b7df-f401-4887-ad69-0fa9898da489" time="1381831386848" ignored="false" />
     <file path="/FordFulkerson.java" changelist="ef32b7df-f401-4887-ad69-0fa9898da489" time="1381829230698" ignored="false" />
     <file path="/Marque.java" changelist="ef32b7df-f401-4887-ad69-0fa9898da489" time="1381823304736" ignored="false" />
@@ -22,9 +24,11 @@
     <file path="$PROJECT_DIR$/../Opti/src/Main.java" changelist="ef32b7df-f401-4887-ad69-0fa9898da489" time="1381831424885" ignored="false" />
     <file path="$PROJECT_DIR$/../Opti/src/Case.java" changelist="ef32b7df-f401-4887-ad69-0fa9898da489" time="1381831386848" ignored="false" />
     <file path="/Case.java" changelist="ef32b7df-f401-4887-ad69-0fa9898da489" time="1381829995558" ignored="false" />
-    <file path="/Main.java" changelist="ef32b7df-f401-4887-ad69-0fa9898da489" time="1381831379988" ignored="false" />
+    <file path="/Main.java" changelist="ef32b7df-f401-4887-ad69-0fa9898da489" time="1384453908730" ignored="false" />
     <file path="/Matrice.java" changelist="ef32b7df-f401-4887-ad69-0fa9898da489" time="1384439542913" ignored="false" />
     <file path="$PROJECT_DIR$/../Opti/src/Matrice.java" changelist="ef32b7df-f401-4887-ad69-0fa9898da489" time="1381831386848" ignored="false" />
+    <file path="/OperationMatrice.java" changelist="ef32b7df-f401-4887-ad69-0fa9898da489" time="1384453526316" ignored="false" />
+    <file path="/BalasHammer.java" changelist="ef32b7df-f401-4887-ad69-0fa9898da489" time="1384453148244" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,8 +92,39 @@
       <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="8" selection-start="1009" selection-end="1009" vertical-scroll-proportion="0.0">
+            <state line="28" column="37" selection-start="1185" selection-end="1191" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CoinNO.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CoinNO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="22" selection-start="588" selection-end="588" vertical-scroll-proportion="0.6701245">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="transport50.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Data/Transport/transport50.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="25" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BalasHammer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BalasHammer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="0" selection-start="342" selection-end="342" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -124,10 +159,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Case.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Case.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Case.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="0" selection-start="1127" selection-end="1127" vertical-scroll-proportion="0.78838176">
+            <state line="25" column="45" selection-start="558" selection-end="558" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OperationMatrice.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/OperationMatrice.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="34" selection-start="1339" selection-end="1339" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -151,11 +195,14 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Matrice.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/Coord.java" />
         <option value="$PROJECT_DIR$/src/Case.java" />
+        <option value="$PROJECT_DIR$/src/BalasHammer.java" />
+        <option value="$PROJECT_DIR$/src/OperationMatrice.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/CoinNO.java" />
       </list>
     </option>
   </component>
@@ -222,6 +269,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Projet-R.O." />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Projet-R.O" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Projet-R.O." />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Projet-R.O" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Transport" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -409,7 +488,11 @@
       <created>1384439281458</created>
       <updated>1384439281458</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Réparation de balasHammer et CoinNO (en principe)">
+      <created>1384439986575</created>
+      <updated>1384439986575</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -454,8 +537,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14800514" sideWeight="0.67107004" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33512786" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14736165" sideWeight="0.67107004" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39365917" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -545,17 +628,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BalasHammer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="13" selection-start="231" selection-end="231" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -576,27 +654,6 @@
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BalasHammer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="231" selection-end="231" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CoinNO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="143" selection-end="143" vertical-scroll-proportion="0.2319236">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OperationMatrice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="153" selection-end="153" vertical-scroll-proportion="0.2319236">
           <folding />
         </state>
       </provider>
@@ -611,13 +668,6 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state line="132" column="1" selection-start="1638" selection-end="1638" vertical-scroll-proportion="0.36721992">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="8" selection-start="1009" selection-end="1009" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -641,8 +691,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Case.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="0" selection-start="1127" selection-end="1127" vertical-scroll-proportion="0.78838176">
+        <state line="25" column="45" selection-start="558" selection-end="558" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BalasHammer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="342" selection-end="342" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OperationMatrice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="34" selection-start="1339" selection-end="1339" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/Transport/transport50.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="25" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="37" selection-start="1185" selection-end="1191" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CoinNO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="22" selection-start="588" selection-end="588" vertical-scroll-proportion="0.6701245">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
